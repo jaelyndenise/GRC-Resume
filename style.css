@@ -171,6 +171,177 @@ ol {
 
 .contact-header-formatting {
   margin: 0px;
+/*There's a warning in here that says the universal selector (*) is "known to be slow" and another that says "box-sizing property isn't supported in IE6 or IE7"
+
+**** Q: What the heck does that mean?
+
+Response:
+
+*/
+
+/* ENTIRE DOCUMENT */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px 0px;
+}
+
+hr {
+  margin: 10px 25px;
+  border-color: rgb(194, 194, 194);
+}
+
+/* Q: Is it possible to style a break <br>? 
+
+Response:
+
+*/
+
+
+a:link {
+  color: black;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  color: rgb(10, 166, 300);
+}
+
+a:active {
+  color: rgb(47, 52, 59);
+}
+
+
+/*- - - - - - - - - - - - - -*/
+
+/* HEADER */
+.header-formatting {
+  font-family: Arial, sans-serif;
+  background-color: rgb(10, 165, 300);
+  color: white;
+}
+
+.remove-gap {
+  margin-bottom: -45px;
+}
+
+header div h1 {
+  display:inline-block;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+header div h2 {
+  display:inline-block;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  font-size: 96px;
+  color: rgb(10, 166, 300);
+  background-image: url("images/blue-iMac-opaque.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 70px 20px;
+  margin-top: 25px;
+  margin-bottom: 0px;
+}
+
+nav {
+  text-align: right;
+  display:inline-block;
+  float: right;
+  list-style-type: none;
+  padding-top: 20px;
+  padding-right: 10px;
+}
+
+header div nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0px 3px;
+}
+
+.image-formatting {
+  text-align: center;
+  padding: 0px;
+}
+
+.maya-angelou-section {
+  background-color: rgb(10, 166, 300, 0.5);
+  padding: 10px 15px;
+  
+}
+.maya-angelou-quote {
+  text-align: center;
+  color: white;
+  font-family: 'Sriracha', cursive;
+  font-size: 32px;
+  padding: 0px 15px;
+  margin-bottom: 5px;
+}
+
+.maya-angelou-name {
+  color: white;
+  font-size: 16px;
+  margin-top: -10px;
+  text-align: right;
+  padding-top: -25px;
+  padding-right: 25px;
+  padding-bottom: 10px;
+}
+
+/* - - - - - - - - - - */
+/* BODY */
+main {
+  margin: 0px 25px;
+}
+
+.intro-formatting {
+  text-align: center;
+  font-family: Serif;
+  padding: 0px 30px;
+}
+
+h3 {
+  color: rgb(10, 166, 300);
+  font-size: 48px;
+}
+
+.meet-me-align {
+  padding: 10px 25px;
+  margin: 10px 25px;
+}
+
+.headshot-formatting {
+  padding-top: -10px;
+  margin-top: -10px;
+}
+
+.about-formatting {
+  text-align: left;
+}
+
+.about-the-developer-formatting {
+  margin: 0px;
+}
+
+ol {
+  font-style: oblique;
+}
+
+.contact-section-formatting {
+  margin: 0px;
+}
+
+.contact-header-formatting {
+  margin: 0px;
 }
 
 ul > li {
@@ -193,6 +364,7 @@ body main section div ul a {
 }
 
 .links-align {
+  color: rgb(10, 166, 300);
   padding-bottom: 20px;
   padding-left: -60px;
   margin-bottom: 20px;

@@ -26,6 +26,7 @@ function sendMailto(event) {
     const body = encodeURIComponent(
         `First name: ${first}\n` +
         `Last name: ${last}\n` +
+        `Company name: ${company}\n` +
         `Email: ${email}\n` +
         `Phone: ${phone}\n` +
         `Message: ${message}\n` +
@@ -35,4 +36,17 @@ function sendMailto(event) {
 
     window.location.href = `mailto:Jaelyn Denise <jaelyn.denise@gmail.com>?subject=${subject}&body=${body}`;
     return false;
+}
+
+function contact() {
+    window.close();
+    window.location.href = "/contact.html";
+}
+
+function openPopup() {
+  window.open(
+    "contact.html",      
+    "PopupWindow",
+    "width=500,height=300,resizable=yes,scrollbars=yes"
+  );
 }

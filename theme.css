@@ -29,7 +29,7 @@ body {
 /* Container for main content (optional, add class="container" to your main if desired) */
 .container {
   max-width: var(--max-width);
-  margin: 24px auto;
+  margin: 10px auto;
   padding: 0 0px;
   display: grid;
   grid-template-columns: 1fr 320px;

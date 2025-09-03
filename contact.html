@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>My Goals</title>
+    <link href="https://cdnjs.cloudfare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet" type="text/css" />
+    <link href="Sriracha-Regular.ttf" rel="stylesheet" type="text/css"/>
+    <link href="theme.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <header class="site-header" role="banner">
+        <strong>Where I'm Going</strong>
+        <nav aria-label="Main navigation" style="float:right">
+        <a href="/about.html">About</a>
+        <a href="/resume.html">Resume</a>
+        <a href="/cover-letter.html">Cover Letter</a>
+        <a href="/goals.html">What's Next?</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section>
+            <h3 style="text-align: center; font-size: 28px">Contact Me</h2>
+            <!-- Use this form element for Github-->
+            <!-- <form id="contactForm" onSubmit="return sendMailto(event)" method="post" enctype="text/plain"> -->
+            
+            <!-- Use this form element for school -->
+            <form id="contact-form" action="https://wp.zybooks.com/form-viewer.php" method="post" enctype="text/plain">
+       
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="phone">Phone:</label><br>
+                <input type="text" id="phone" name="phone" required><br><br>
+
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="4" required></textarea><br><br>
+
+                <label for="contact-time">Preferred contact method:</label><br>
+                <input type="radio" id="email" name="contact-method" value="email" required>
+                <label for="email">Email</label>
+                <input type="radio" id="phone" name="contact-method" value="phone">
+                <label for="phone">Phone</label>
+                <input type="radio" id="text" name="contact-method" value="text">
+                <label for="text">Text</label><br><br>
+
+                <label for="contact-time">Best time to reach you:</label><br>
+                <select id="contact-time" name="contact-time" required>
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="phone">AM</option>
+                    <option value="email">PM</option>
+                    <option value="text">Anytime</option>
+                </select><br><br>
+
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

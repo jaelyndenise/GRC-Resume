@@ -395,44 +395,57 @@ tfoot td {
 @media (max-width: 700px) {
   body {
     font-size: 16px;
-    padding: 0 8px;
+    padding: 0 0;
   }
 
-  header.site-header nav {
-    float: none !important;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-    margin-top: 8px;
+  header.site-header,
+  section,
+  footer {
+    max-width: 100vw !important;
+    width: 100vw !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 
-  .site-header strong {
-    display: block;
-    margin-bottom: 8px;
+  .container {
+    display: block !important;
+    max-width: 100vw !important;
+    width: 100vw !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
 
   main section > div[style*="display: flex"] {
     flex-direction: column !important;
-    align-items: center !important;
+    align-items: stretch !important;
     gap: 16px !important;
     padding: 8px !important;
+    width: 100% !important;
+    box-sizing: border-box;
   }
 
   img {
-    max-width: 100%;
-    height: auto;
+    max-width: 100vw !important;
+    width: 100% !important;
+    height: auto !important;
+    display: block;
   }
 
   .contact-info {
     padding: 8px !important;
+    width: 100vw !important;
+    box-sizing: border-box;
   }
 
   table {
     font-size: 14px;
-    width: 100%;
+    width: 100vw !important;
     overflow-x: auto;
     display: block;
+    box-sizing: border-box;
   }
 }
 

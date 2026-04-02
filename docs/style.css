@@ -390,3 +390,54 @@ tfoot td {
 #contact-form button:hover {
   background: #4e8ecf;
 }
+
+/* Responsive styles */
+@media (max-width: 700px) {
+  body {
+    font-size: 16px;
+    padding: 0 8px;
+  }
+
+  header.site-header nav {
+    float: none !important;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .site-header strong {
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  main section > div[style*="display: flex"] {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 16px !important;
+    padding: 8px !important;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .contact-info {
+    padding: 8px !important;
+  }
+
+  table {
+    font-size: 14px;
+    width: 100%;
+    overflow-x: auto;
+    display: block;
+  }
+}
+
+/* Make nav links easier to tap */
+nav a {
+  padding: 8px 12px;
+  display: inline-block;
+}

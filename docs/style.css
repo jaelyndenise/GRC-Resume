@@ -479,3 +479,106 @@ nav a {
   padding: 8px 12px;
   display: inline-block;
 }
+
+/* Add this button for the hamburger menu */
+button.hamburger {
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  padding: 0;
+  margin-left: auto;
+  margin-right: 16px;
+  position: relative;
+  z-index: 10;
+}
+
+button.hamburger:focus {
+  outline: none;
+}
+
+button.hamburger div {
+  width: 100%;
+  height: 4px;
+  background: #fff;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Transformations for the hamburger icon lines */
+button.hamburger div:nth-child(1) {
+  transform-origin: top left;
+}
+
+button.hamburger div:nth-child(2) {
+  transform-origin: center;
+}
+
+button.hamburger div:nth-child(3) {
+  transform-origin: bottom left;
+}
+
+/* Active state for hamburger menu (when nav is open) */
+nav.open + .hamburger div:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+
+nav.open + .hamburger div:nth-child(2) {
+  opacity: 0;
+}
+
+nav.open + .hamburger div:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* Main navigation styles */
+nav#main-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+nav#main-nav a {
+  padding: 8px 12px;
+  display: inline-block;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav#main-nav a:hover {
+  color: var(--accent);
+}
+
+/* Responsive adjustments for navigation */
+@media (max-width: 700px) {
+  nav#main-nav {
+    display: none; /* Hidden by default, controlled by hamburger */
+    flex-direction: column;
+    width: 100%;
+    background: var(--card);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 10;
+    border-radius: 0 0 var(--radius) var(--radius);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+
+  nav#main-nav.open {
+    display: flex; /* Show when hamburger is active */
+  }
+
+  button.hamburger {
+    display: flex; /* Show hamburger button */
+  }
+}

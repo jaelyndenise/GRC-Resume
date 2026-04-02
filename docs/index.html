@@ -10,12 +10,18 @@
   <body onload="showDateTime()">
     <header class="site-header" role="banner">
       <strong>What I Do</strong>
-      <nav aria-label="Main navigation" style="float:right">
+      <!-- Add this button for the hamburger menu -->
+      <nav id="main-nav" aria-label="Main navigation" style="float:right">
         <a href="about.html">About</a>
         <a href="index.html" class="active">Resume</a>
         <a href="cover-letter.html">Cover Letter</a>
         <a href="goals.html">What's Next?</a>
       </nav>
+
+      <button class="hamburger" aria-label="Open navigation" onclick="toggleNav()">
+        &#9776;
+      </button>
+      
     </header>
 
     <header id="main-header" class="site-header" role="banner">

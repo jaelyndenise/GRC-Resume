@@ -50,3 +50,8 @@ function openPopup() {
     "width=500,height=300,resizable=yes,scrollbars=yes"
   );
 }
+
+function toggleNav() {
+  var nav = document.getElementById('main-nav');
+  nav.classList.toggle('open');
+}

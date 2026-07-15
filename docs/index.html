@@ -1,352 +1,406 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Resume: Jaelyn Denise</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jaelyn Denise — Security Engineer &amp; GRC Specialist</title>
+    <meta name="description" content="Jaelyn Denise, CISSP — security engineer, GRC specialist, and full-stack developer in Las Vegas, NV. Security programs that pass audits, code that passes review." />
+    <meta property="og:title" content="Jaelyn Denise — Security Engineer &amp; GRC Specialist" />
+    <meta property="og:description" content="Security programs that pass audits. Code that passes review. CISSP with 7+ years across GRC, security engineering, and full-stack development." />
+    <meta property="og:image" content="assets/IMG_8339.PNG" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230b1026'/%3E%3Cpath d='M50 14 L57 43 L86 50 L57 57 L50 86 L43 57 L14 50 L43 43 Z' fill='%23a78bfa'/%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
-  
-  <body onload="showDateTime()">
-    <header class="site-header" role="banner">
-      <strong>What I Do</strong>
-      <!-- Add this button for the hamburger menu
-      <button class="hamburger" aria-label="Open navigation" onclick="toggleNav()">
-        &#9776;
-      </button> -->
 
-      <nav aria-label="Main navigation" style="float:right">
-        <a href="about.html">About</a>
-        <a href="index.html" class="active">Resume</a>
-        <a href="cover-letter.html">Cover Letter</a>
-        <a href="goals.html">What's Next?</a>
+  <body>
+    <div class="sky" aria-hidden="true">
+      <div class="nebula nebula-1"></div>
+      <div class="nebula nebula-2"></div>
+      <div class="nebula nebula-3"></div>
+      <div id="starfield"></div>
+    </div>
+
+    <header class="site-nav glass" role="banner">
+      <a class="brand" href="#top">
+        <span class="brand-spark" aria-hidden="true">✦</span> Jaelyn Denise
+      </a>
+      <nav aria-label="Main navigation" class="nav-links">
+        <a href="#why">Why Me</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#writing">Writing</a>
+        <a href="#beyond">Beyond the Desk</a>
+        <a href="#contact">Contact</a>
       </nav>
-
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to light mode" title="Toggle light / dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/>
+        </svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.5"/>
+          <g stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+            <line x1="12" y1="1.5" x2="12" y2="4.5"/><line x1="12" y1="19.5" x2="12" y2="22.5"/>
+            <line x1="1.5" y1="12" x2="4.5" y2="12"/><line x1="19.5" y1="12" x2="22.5" y2="12"/>
+            <line x1="4.6" y1="4.6" x2="6.7" y2="6.7"/><line x1="17.3" y1="17.3" x2="19.4" y2="19.4"/>
+            <line x1="4.6" y1="19.4" x2="6.7" y2="17.3"/><line x1="17.3" y1="6.7" x2="19.4" y2="4.6"/>
+          </g>
+        </svg>
+      </button>
     </header>
 
-    <header id="main-header" class="site-header" role="banner">
-      <div class="resume-title">
-        <h1>Jaelyn Denise</h1>
-        <h6 id="dateTime" class="subtitle"></h6>
-      </div>
-      
-      <div class="subtitle">
-        <h2>Security Analyst &#8226; GRC Specialist &#8226; Nerd</h2>
-      </div>
-    </header>
-    
-    <main>
+    <main id="top">
 
-      <div class="container">
-        <section>
-          
-          <h3>Meet the Nerd</h3>
-        
-          <div style="padding: 12px;">
-            
-            <div style="width: fit-content;">
-            <!--Include a professional headshot or avatar image-->
-              <img src="assets/IMG_8339.PNG" width=500 alt="Modern Mixtapes (cover band) headshot.">
-            </div>
-            
-            <div>
-            <!--Int[\oduce yourself: who you are,and where you are located.-->
-              <p>A highly versatile cybersecurity professional with over five 
-                years of experience in identifying and mitigating potential 
-                risks within organizations and developing security-first software solutions. 
-              </p>
-              <p>Demonstrates comprehensive knowledge of regulatory standards to ensure 
-                compliance and foster a culture of organizational integrity and
-                 accountability.
-              </p>
-              <p>Combining technical expertise with a unique and engaging 
-                approach to leadership and process development, Jaelyn excels in 
-                risk analysis, policy and process development, problem-solving, 
-                software development, and above all, leading by example.
-              </p>         
-            </div>
+      <!-- ============ HERO ============ -->
+      <section class="hero" aria-label="Introduction">
+        <div class="hero-text reveal">
+          <p class="handwritten">hi, I’m Jaelyn ✦</p>
+          <h1>Security that passes audits.<br /><span class="grad">Code that passes review.</span></h1>
+          <p class="hero-sub">
+            I’m a CISSP-certified security engineer and GRC specialist who used to ship
+            full-stack software for a living — so when I write a control, I can also read
+            the source code behind it. I build security programs from zero, translate risk
+            into plain English, and occasionally headline Vegas casinos. Really.
+          </p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#contact">Let’s talk</a>
+            <a class="btn btn-ghost" href="#projects">See my work</a>
           </div>
-        </section>
-        
-        <section>
-          <h3>Skills & Training</h3>
-          <article>
-            <div>
-              <p><b>Software Development</b></p>
-              <ul>
-                <li>Front-end software development</li>
-                <li>Back-end software development</li>
-                <li>Database management</li>
-                <li>Quality assurance testing</li>
-              </ul>
+          <ul class="stat-chips" aria-label="Highlights">
+            <li class="glass">SOC 2 Type II — program built from zero</li>
+            <li class="glass">63% fewer critical vulns in 6 months</li>
+            <li class="glass">7+ years security × software</li>
+            <li class="glass">CISSP · Security+</li>
+          </ul>
+        </div>
+        <div class="hero-portrait reveal">
+          <div class="portrait-frame glass">
+            <img src="assets/IMG_8339.PNG" alt="Jaelyn Denise, smiling in a white blouse in front of a bookshelf" />
+          </div>
+          <div class="portrait-badge glass" aria-hidden="true">Security Engineer · GRC · Nerd</div>
+        </div>
+      </section>
 
-              <p><b>Project Management</b></p>
-              <ul>
-                <li>Agile management</li>
-                <li>Policy development</li>
-                <li>Training design & instruction</li>
-                <li>Client relationship management</li>
-              </ul>
-
-              <p><b>IT Security</b></p>
-              <ul>
-                <li>Identity & Access Management</li>
-                <li>Cloud security configuration</li>
-                <li>Risk assessment</li>
-                <li>Incident response</li>
-                <li>Regulatory compliance</li>
-                <li>Penetration testing</li>
-              </ul>
-
-              <p><b>Leadership</b></p>
-              <ul>
-                <li>Strategic planning</li>
-                <li>Mentorship & coaching</li>
-                <li>Cross-functional collaboration</li>
-              </ul>
-            </div>       
+      <!-- ============ WHY ME ============ -->
+      <section id="why" aria-labelledby="why-title">
+        <p class="eyebrow handwritten">the pitch</p>
+        <h2 id="why-title">Why I’m a great hire</h2>
+        <div class="card-grid three">
+          <article class="glass card reveal">
+            <div class="card-icon" aria-hidden="true">⚙️</div>
+            <h3>I speak auditor <em>and</em> engineer</h3>
+            <p>
+              Most GRC folks hand engineers a spreadsheet. I hand them a pull request.
+              A full-stack background (React, Node.js, PostgreSQL) means compliance
+              requirements land where they matter — in the code — and security reviews
+              go deeper than a checklist.
+            </p>
           </article>
-        </section>
-      </div>
-
-      <section>
-        <div>
-          <h3>Experience</h3>
-          <h4>BoomID</h4>
-          <p><em>Software Security Engineer</em></p>
-          <p>
-            Designed and implemented a security program, achieving SOC II 
-            Type I certification within two months, showcasing expertise 
-            in compliance and process optimization.</p>
-          <p>Administered AWS security configurations, including firewalls,
-             security groups, and encryption, to ensure robust cloud security.
-          </p> 
+          <article class="glass card reveal">
+            <div class="card-icon" aria-hidden="true">🛡️</div>
+            <h3>I build programs from scratch</h3>
             <p>
-              Mentored junior engineers and improved team collaboration to 
-             enhance troubleshooting and issue resolution.
-          </p>
-          <hr>
-          <h4>Goldiknox</h4>
-          <p><em>Risk & Compliance Analyst</em></p>
-          <p>
-            Conducted risk assessments and evaluated security postures of client 
-            organizations, aligning solutions with frameworks like the Carnegie 
-            Risk Maturity Model.</p>
-          <p>Delivered actionable recommendations, tailored reports, and automated 
-            solutions, enabling improved security monitoring and compliance.
-          </p> 
+              As the sole security engineer at a SaaS startup, I stood up the entire
+              security program and reached SOC 2 Type I in under two months — then took
+              it to Type II. Automating evidence collection cut audit prep time by about 40%.
+            </p>
+          </article>
+          <article class="glass card reveal">
+            <div class="card-icon" aria-hidden="true">🎤</div>
+            <h3>I make the complex make sense</h3>
             <p>
-              Collaborated with IT departments to develop and refine security processes, 
-              contributing to better alignment with client expectations and service 
-              level agreements.
-          </p>
-          <hr>
-          <h4>Cayden Security</h4>
-          <p><em>Web Application Security Tester</em></p>
-          <p>
-            Diagnosed and mitigated web application vulnerabilities using 
-            industry-standard tools such as BurpSuite, 
-            aligning findings with customer security needs.</p>
-          <p>Produced comprehensive security reports with clear recommendations, 
-            aiding clients in prioritizing and addressing critical risks.
-          </p> 
-          <hr>
-          <h4>Camdun Solutions</h4>
-          <p><em>Full-Stack Engineer</em></p>
-          <p>
-            Managed projects and developed customized web-based solutions using React, 
-            Node.js, and CMS platforms like WordPress and Shopify. Implemented CI/CD 
-            pipelines and collaborated with clients to meet business goals.</p>
-          <hr>
-          <h4>Quadshot Digital</h4>
-          <p><em>Assistant Web Designer</em></p>
-          <p>
-           Assisted in the development and design of client websites. Ensured responsive 
-           design and customized HTML/CSS to meet client specifications.</p>
-          <hr>
-          <h4>Conduent Solutions</h4>
-          <p><em>Apple Technical Support</em></p>
-          <p>
-            Provided specialized support for account security, troubleshooting 
-            technical issues, and ensuring compliance
-             with Apple’s customer service and security protocols.</p>
-          <hr>
+              Former Algebra II teacher, professional vocalist, and lifelong explainer of
+              complicated things. Executive-ready risk reports, engineer-friendly training,
+              and stakeholder updates that people actually read.
+            </p>
+          </article>
+        </div>
+        <div class="stat-strip glass reveal" role="list" aria-label="Key metrics">
+          <div role="listitem"><strong>2 mo</strong><span>to SOC 2 Type I</span></div>
+          <div role="listitem"><strong>63%</strong><span>critical vulns cut</span></div>
+          <div role="listitem"><strong>40%</strong><span>less audit prep</span></div>
+          <div role="listitem"><strong>25%</strong><span>avg. client risk maturity gain</span></div>
         </div>
       </section>
 
-      <section style="text-align: center;">
-        <div>
-          <table>
-            <caption>Education & Certifications</caption>
-            <thead>
-              <tr>
-                <th>Issuing Body</th>
-                <th>Degree/Certification</th>
-                <th>Year</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Western Governors University</td>
-                <td>Bachelor of Science</td>
-                <td>2025</td>
-                <td>...</td>
-              </tr>
-              <tr>
-                <td>California State University</td>
-                <td>Bachelor of Arts</td>
-                <td>2016</td>
-                <td>...</td>
-              </tr>
-              
-               <tr>
-                <td>College of Southern Nevada</td>
-                <td>Associate of Arts</td>
-                <td>2013</td>
-                <td>...</td>
-              </tr>
-              <tr>
-                <td>ISC2</td>
-                <td>Certified Information Systems Security Professional (CISSP)</td>
-                <td>   EXP: 08/28   </td>
-                <td>#1983251</td>
-              </tr>
-              <tr>
-                <td>CompTIA</td>
-                <td>Security+</td>
-                <td>EXP: 08/28</td>
-                <td>#COMP001022840609</td>
-              </tr>
-              <tr>
-                <td>Clark County School District</td>
-                <td>Advanced Computer Science Teaching License</td>
-                <td>EXP: 06/27</td>
-                <td>#111034</td>
-              </tr>
-              <tr>
-                <td>Nucamp</td>
-                <td>Certified Full-Stack Software Developer</td>
-                <td>2020</td>
-                <td>...</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <section>
-        <h3 style="text-align: center;">Additional Information</h3>
-        <div style="display: flex; gap: 48px; flex-wrap: wrap; justify-content: center;">
-
-          <div>
-            <h4>Technologies & Tools</h4>
+      <!-- ============ EXPERIENCE ============ -->
+      <section id="experience" aria-labelledby="exp-title">
+        <p class="eyebrow handwritten">the receipts</p>
+        <h2 id="exp-title">Experience</h2>
+        <div class="timeline">
+          <article class="glass card timeline-item reveal">
+            <div class="timeline-meta"><span class="when">Feb 2022 – Present</span></div>
+            <h3>Security Software Engineer</h3>
+            <p class="where">TLA Innovation Inc. (dba BoomID) · Remote</p>
             <ul>
-              <li>AWS</li>
-              <li>Azure</li>
-              <li>Microsoft Office</li>
-              <li>Google Suite</li>
-              <li>Jira</li>
-              <li>Confluence</li>
-              <li>Git/GitHub</li>
-              <li>VS Code</li>
-              <li>Postman</li>
-              <li>Bitbucket</li>
-              <li>Docker</li>
-              <li>Sonarcloud</li>
-              <li>MongoDB</li>
-              <li>Supabase</li>
-              <li>BurpSuite</li>
-              <li>Metasploit</li>
-              <li>PostgresSQL</li>
-              <li>React</li>
-              <li>Node.js</li>
+              <li>Led cross-functional SOC 2 Type II certification, aligning controls and evidence across engineering, legal, and operations — after building the ISO 27001-aligned security program from zero.</li>
+              <li>Directed vulnerability assessments, penetration testing, and remediation cycles, reducing critical vulnerabilities by 63% in six months.</li>
+              <li>Designed IAM policies in Azure AD and AWS, cutting provisioning errors by 40%; administer AWS security configurations, logging pipelines, and monitoring.</li>
+              <li>Ship full-stack features on the core SaaS platform (React, Node.js, PostgreSQL) — page loads improved 35% — and run incident response end to end.</li>
             </ul>
-          </div>
+          </article>
+          <article class="glass card timeline-item reveal">
+            <div class="timeline-meta"><span class="when">Mar 2023 – Mar 2024</span></div>
+            <h3>Risk &amp; Compliance Analyst</h3>
+            <p class="where">Goldiknox GRC · Remote</p>
+            <ul>
+              <li>Conducted risk and maturity assessments with the Carnegie Risk Maturity Model, delivering executive-ready reports for multiple client organizations.</li>
+              <li>Built risk dashboards that raised leadership visibility by 40%, and refined security policies that lifted SLA compliance by 25%.</li>
+              <li>Guided clients on SOC 2, ISO 27001, NIST CSF, and GDPR alignment.</li>
+            </ul>
+          </article>
+          <article class="glass card timeline-item reveal">
+            <div class="timeline-meta"><span class="when">Aug 2021 – Feb 2022</span></div>
+            <h3>Web Application Penetration Tester</h3>
+            <p class="where">Cayden Security · Remote</p>
+            <ul>
+              <li>Ran web-app penetration tests with BurpSuite, NMAP, and OSINT techniques against high-profile client applications.</li>
+              <li>Delivered prioritized, plain-language remediation reports that clients could act on immediately.</li>
+            </ul>
+          </article>
+          <article class="glass card timeline-item reveal">
+            <div class="timeline-meta"><span class="when">Mar 2021 – Jul 2021</span></div>
+            <h3>Junior Front-End Web Developer</h3>
+            <p class="where">Quadshot Digital · Remote</p>
+            <ul>
+              <li>Built responsive client websites (HTML, CSS, Liquid, WordPress) and improved load times and SEO.</li>
+            </ul>
+          </article>
+          <article class="glass card timeline-item reveal">
+            <div class="timeline-meta"><span class="when">Mar 2020 – Feb 2021</span></div>
+            <h3>Full-Stack Engineer</h3>
+            <p class="where">Camdun Solutions LLC · Remote</p>
+            <ul>
+              <li>Developed web and mobile interfaces with React, Node.js, and PostgreSQL; resolved 200+ Jira tickets.</li>
+              <li>Built CI/CD pipelines and automated testing that cut regression defects by 70%.</li>
+            </ul>
+          </article>
+          <article class="glass card timeline-item reveal">
+            <div class="timeline-meta"><span class="when">2017 – 2019</span></div>
+            <h3>Earlier chapters</h3>
+            <p class="where">Clark County School District · Conduent (Apple Support)</p>
+            <ul>
+              <li>Taught Algebra II at a recovery high school — differentiated lessons, IEPs, and proof that I can explain anything to anyone.</li>
+              <li>Top-rated Apple technical support: account security, troubleshooting, and customer-first process improvement.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
 
-          <div>
-            <h4>Frameworks</h4>
-              <ul>
-                <li>NIST-CSF</li>
-                <li>OWASP Top 10</li>
-                <li>MITRE ATT&CK</li>
-                <li>COBIT</li>
-                <li>ITIL</li>
-                <li>CSA CCM</li>
-                <li>PCI-DSS</li>  
-                <li>HIPAA</li>
-                <li>GDPR</li>
-                <li>CCPA</li>
-                <li>FISMA</li>
-                <li>FedRAMP</li>
-                <li>SOC 2</li>
+      <!-- ============ PROJECTS ============ -->
+      <section id="projects" aria-labelledby="projects-title">
+        <p class="eyebrow handwritten">things I’ve built</p>
+        <h2 id="projects-title">Projects</h2>
+        <div class="card-grid three project-grid">
+          <article class="glass card project-card reveal">
+            <a class="shot" href="https://cloud-saw.com" target="_blank" rel="noopener">
+              <img src="assets/projects/cloudsaw.png" alt="CloudSaw homepage — ‘Scan AWS for misconfigurations. Nothing ever leaves your machine.’" loading="lazy" />
+            </a>
+            <div class="project-body">
+              <h3><a href="https://cloud-saw.com" target="_blank" rel="noopener">CloudSaw</a></h3>
+              <p class="project-tag">Local-first AWS security scanner · Rust · Terraform · ScoutSuite</p>
+              <p>
+                A desktop app that scans AWS for misconfigurations entirely on your own machine —
+                least-privilege scanner roles, compliance-mapped findings, zero data exfiltration.
+                Cloud security engineering and product thinking in one build.
+              </p>
+            </div>
+          </article>
+          <article class="glass card project-card reveal">
+            <a class="shot" href="https://go-remo.com" target="_blank" rel="noopener">
+              <img src="assets/projects/remo.png" alt="Remo homepage — ‘Find roles that fit — and apply to them faster.’" loading="lazy" />
+            </a>
+            <div class="project-body">
+              <h3><a href="https://go-remo.com" target="_blank" rel="noopener">Remo</a></h3>
+              <p class="project-tag">AI-assisted job search platform · Full-stack SaaS</p>
+              <p>
+                Scans job boards and company career pages, scores every role against your
+                preferences, and tailors your resume for each one. End-to-end product work:
+                aggregation, smart ranking, browser extension, and application tracking.
+              </p>
+            </div>
+          </article>
+          <article class="glass card project-card reveal">
+            <a class="shot" href="https://lostthingsgallery.base44.app" target="_blank" rel="noopener">
+              <img src="assets/projects/lostthings.png" alt="The Lost Things Gallery homepage — an illustrated, firefly-lit fairy-tale village" loading="lazy" />
+            </a>
+            <div class="project-body">
+              <h3><a href="https://lostthingsgallery.base44.app" target="_blank" rel="noopener">The Lost Things Gallery</a></h3>
+              <p class="project-tag">Enchanted digital marketplace · Creative direction</p>
+              <p>
+                An immersive, fairy-tale marketplace where artisans, scribes, and composers
+                showcase their work — art, books, music, events, and more. Where my creative
+                side and my builder side hold hands.
+              </p>
+            </div>
+          </article>
+        </div>
+        <p class="section-footnote reveal">
+          More experiments, from flashcard apps to Python games, live on
+          <a href="https://github.com/jaelyndenise?tab=repositories" target="_blank" rel="noopener">my GitHub</a>.
+        </p>
+      </section>
+
+      <!-- ============ SKILLS & CREDENTIALS ============ -->
+      <section id="skills" aria-labelledby="skills-title">
+        <p class="eyebrow handwritten">the toolkit</p>
+        <h2 id="skills-title">Skills &amp; Credentials</h2>
+        <div class="card-grid two">
+          <div class="stack">
+            <article class="glass card reveal">
+              <h3>Security &amp; GRC</h3>
+              <ul class="chip-list">
+                <li>SOC 2</li><li>ISO 27001</li><li>NIST CSF</li><li>GDPR</li><li>CCPA</li>
+                <li>HIPAA</li><li>PCI-DSS</li><li>FedRAMP</li><li>IAM</li><li>SIEM</li>
+                <li>Incident Response</li><li>Threat Modeling</li><li>Vulnerability Management</li>
+                <li>Penetration Testing</li><li>RMF</li><li>BC/DR</li>
               </ul>
+            </article>
+            <article class="glass card reveal">
+              <h3>Engineering</h3>
+              <ul class="chip-list">
+                <li>JavaScript / TypeScript</li><li>React</li><li>Node.js</li><li>Python</li>
+                <li>Ruby</li><li>SQL</li><li>Golang</li><li>HTML / CSS</li>
+                <li>PostgreSQL</li><li>MongoDB</li><li>Supabase</li>
+              </ul>
+            </article>
+            <article class="glass card reveal">
+              <h3>Cloud, Tools &amp; Ways of Working</h3>
+              <ul class="chip-list">
+                <li>AWS</li><li>Azure AD</li><li>Docker</li><li>CI/CD</li><li>Terraform</li>
+                <li>BurpSuite</li><li>Metasploit</li><li>ScoutSuite</li><li>Snyk</li>
+                <li>SonarCloud</li><li>Jira</li><li>Git/GitHub</li><li>Agile / Scrum</li>
+                <li>DevSecOps</li><li>Training Design</li><li>Mentorship</li>
+              </ul>
+            </article>
           </div>
-
-          <div>
-            <h4>Methodologies</h4>
-            <ul>
-              <li>Agile, Scrum</li>
-              <li>Scrum</li>
-              <li>Waterfall</li>
-              <li>DevSecOps</li>  
-              <li>CI/CD</li>
-              <li>RMF</li>
-              <li>SIEM</li>
-              <li>Vulnerability Management</li>
-              <li>Incident Response</li>
-              <li>Penetration Testing</li>
-              <li>Threat Modeling</li>
-              <li>Security Auditing</li>
-              <li>BC/DR</li>
+          <article class="glass card credentials reveal">
+            <h3>Credentials</h3>
+            <ul class="cred-list">
+              <li>
+                <strong>CISSP</strong> — ISC2 · #1983251 · valid through 08/2028
+              </li>
+              <li>
+                <strong>CompTIA Security+</strong> — #COMP001022840609 · valid through 08/2028
+              </li>
+              <li>
+                <strong>B.S. Computer Science</strong> — Western Governors University, 2024
+              </li>
+              <li>
+                <strong>B.A. Commercial Arranging &amp; Scoring</strong> (minor: French) — CSU San Bernardino, 2016
+              </li>
+              <li>
+                <strong>A.A. Music</strong> — College of Southern Nevada, 2013 <span class="muted">(started at 16, graduated cum laude at 17)</span>
+              </li>
+              <li>
+                <strong>Certified Full-Stack Software Developer</strong> — NuCamp, 2020
+              </li>
+              <li>
+                <strong>Python &amp; Software Engineering</strong> — MIT xPRO, 2019
+              </li>
+              <li>
+                <strong>Advanced Computer Science Teaching License</strong> — Nevada · #111034
+              </li>
             </ul>
-          </div>
-
-           <div>
-            <h4>Languages</h4>
-            <ul>
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>JavaScript</li>
-              <li>Python</li>
-              <li>Ruby</li>
-              <li>SQL</li>
-              <li>Golang</li>
-              <li>Typescript</li>
-            </ul>
-          </div>
-
-        </div>
-        <p style="text-align: center;">References available upon request.</p>
+          </article>
         </div>
       </section>
 
-      <section>
-        <div class="contact-info">
-          <div>
-            <h3>Contact</h3>
+      <!-- ============ WRITING ============ -->
+      <section id="writing" aria-labelledby="writing-title">
+        <p class="eyebrow handwritten">brain, published</p>
+        <h2 id="writing-title">Writing</h2>
+        <div class="card-grid two">
+          <article class="glass card writing-card reveal">
+            <p class="project-tag">Medium · Certification</p>
+            <h3><a href="https://medium.com/@jaelyndenise/how-i-passed-the-cissp-exam-when-i-was-1000-certain-i-would-fail-ff4dc90e72fd" target="_blank" rel="noopener">How I Passed the CISSP Exam (When I Was 1000% Certain I Would Fail)</a></h3>
+            <p>The honest version of the CISSP journey — doubt, strategy, and what actually worked.</p>
+          </article>
+          <article class="glass card writing-card reveal">
+            <p class="project-tag">Medium · Engineering life</p>
+            <h3><a href="https://medium.com/@jaelyndenise" target="_blank" rel="noopener">I Forgot How to Code: A Letter to My Formerly Syntactically Superior Self</a></h3>
+            <p>A love letter (and gentle roast) from a security engineer to the developer she used to be.</p>
+          </article>
+        </div>
+        <p class="section-footnote reveal">
+          Follow along on <a href="https://medium.com/@jaelyndenise" target="_blank" rel="noopener">Medium</a> — I write about security, certifications, and the occasionally chaotic life of a career polymath.
+        </p>
+      </section>
+
+      <!-- ============ BEYOND THE DESK ============ -->
+      <section id="beyond" aria-labelledby="beyond-title">
+        <p class="eyebrow handwritten">the human behind the CISSP</p>
+        <h2 id="beyond-title">Beyond the Desk</h2>
+        <div class="card-grid two beyond-grid">
+          <figure class="glass card photo-card reveal">
+            <img src="assets/IMG_8381-11_0x14_0-01-A.jpeg" alt="Black-and-white portrait of Jaelyn laughing while her cane corso, Aero, licks her cheek" loading="lazy" />
+            <figcaption>
+              <strong>Chief Morale Officer: Aero</strong> — my cane corso, head of workplace
+              wellness and treat-based incident response.
+            </figcaption>
+          </figure>
+          <figure class="glass card photo-card reveal">
+            <img src="assets/modern-mixtapes-headshot.jpeg" alt="Jaelyn in a royal blue top and white scarf, posing against a textured silver wall" loading="lazy" />
+            <figcaption>
+              <strong>The other stage</strong> — professional vocalist, headliner at the
+              Tropicana and Virgin Hotels in Las Vegas, currently on bass in a grunge band.
+            </figcaption>
+          </figure>
+        </div>
+        <article class="glass card fun-facts reveal">
+          <h3>Field notes</h3>
+          <ul>
+            <li>Started college at 16; recorded my first original album at 18.</li>
+            <li>Taught Algebra II at a recovery high school at 21.</li>
+            <li>Rubber duck collection: <strong>137</strong> and counting. Debugging is a team sport.</li>
+            <li>Builds castles in Minecraft; grows actual gardens in actual dirt.</li>
+            <li>Favorite color: midnight blue with sparkles. You’re looking at it.</li>
+          </ul>
+        </article>
+        <article class="glass card mission reveal">
+          <img src="assets/Enterprise_Forward.jpg" alt="The starship Enterprise flying through a starfield" loading="lazy" />
+          <div class="mission-body">
+            <blockquote>
+              “I’ve learned that I still have a lot to learn.”
+              <cite>— Maya Angelou</cite>
+            </blockquote>
+            <p>
+              My dream is a world a little more like <em>Star Trek: The Next Generation</em> —
+              where technology enhances lives instead of controlling them. Over the next few
+              years I plan to lead a security team, contribute to open source, and mentor the
+              next generation of engineers the way my mentors invested in me.
+            </p>
           </div>
-          
-          <div>
-            <!--Include LinkedIn profile, Github, and email form (or just the address if you aren't feeling fancy-->
-            <p>I am available Monday - Friday, 10am to 6pm PST.</p>
-            
-            <p>Location: Las Vegas, NV</p>            
-            <a href="https://github.com/jaelyndenise" target="_blank">Github</a>
-            &#8226;
-            <a href="https://www.linkedin.com/in/jaelyn-denise-cissp-43128694/" target="_blank">LinkedIn</a>
+        </article>
+      </section>
+
+      <!-- ============ CONTACT ============ -->
+      <section id="contact" aria-labelledby="contact-title">
+        <p class="eyebrow handwritten">say hello</p>
+        <h2 id="contact-title">Let’s build something secure</h2>
+        <div class="glass card contact-card reveal">
+          <p>
+            Looking for someone who can stand up your security program, read your source code,
+            and explain both to your board? I’m your nerd.
+          </p>
+          <p class="muted">Las Vegas, NV · Remote-friendly · Available Mon–Fri, 10am–6pm PT</p>
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="mailto:jaelyn.denise@gmail.com">Send an email</a>
+            <a class="btn btn-ghost" href="https://github.com/jaelyndenise" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn btn-ghost" href="https://www.linkedin.com/in/jaelyn-denise-cissp-43128694/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn btn-ghost" href="https://medium.com/@jaelyndenise" target="_blank" rel="noopener">Medium</a>
           </div>
-          <button onclick="window.location.href='mailto:Jaelyn Denise <jaelyn.denise@gmail.com>'" style="margin-top: 24px;">Send an Email</button>
         </div>
       </section>
     </main>
-    
+
     <footer>
-      <div>
-        <p>Copyright 2020. Camdun Solutions LLC</p>
-      </div>
+      <p>© 2026 Jaelyn Denise · Made with midnight blue and sparkles ✦</p>
     </footer>
-    
+
     <script src="script.js"></script>
   </body>
 </html>

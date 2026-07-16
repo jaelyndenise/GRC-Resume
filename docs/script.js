@@ -1,52 +1,77 @@
 /* ============================================================
-   Jaelyn Denise — galaxy glass
-   Theme toggle, starfield, scroll-spy, reveal animations.
+   Jaelyn Denise — golden galactic portfolio
+   Three-atmosphere toggle, cosmic starfield, scroll-spy, reveals.
    ============================================================ */
 
 (function () {
   const root = document.documentElement;
   root.classList.add("js");
 
-  /* ---------- theme toggle (sun / crescent moon) ---------- */
+  /* ---------- three-atmosphere toggle: dark → twilight → light ---------- */
+  const THEMES = ["dark", "twilight", "light"];
+  const LABELS = {
+    dark: "Galactic night — click for twilight",
+    twilight: "Twilight — click for marble daylight",
+    light: "Marble daylight — click for galactic night",
+  };
   const toggle = document.getElementById("theme-toggle");
-  const stored = localStorage.getItem("theme");
-  if (stored === "light" || stored === "dark") {
-    root.setAttribute("data-theme", stored);
-  }
 
-  function syncToggleLabel() {
-    const dark = root.getAttribute("data-theme") === "dark";
-    toggle.setAttribute(
-      "aria-label",
-      dark ? "Switch to light mode" : "Switch to dark mode"
-    );
+  const stored = localStorage.getItem("theme");
+  if (THEMES.includes(stored)) root.setAttribute("data-theme", stored);
+
+  function syncLabel() {
+    const t = root.getAttribute("data-theme");
+    toggle.setAttribute("aria-label", LABELS[t] || "Change theme");
+    toggle.setAttribute("title", LABELS[t] || "Change atmosphere");
   }
 
   toggle.addEventListener("click", () => {
-    const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    const current = root.getAttribute("data-theme");
+    const next = THEMES[(THEMES.indexOf(current) + 1) % THEMES.length];
     root.setAttribute("data-theme", next);
     localStorage.setItem("theme", next);
-    syncToggleLabel();
+    syncLabel();
   });
-  syncToggleLabel();
+  syncLabel();
 
-  /* ---------- starfield ---------- */
+  /* ---------- starfield (gold / champagne) ---------- */
   const field = document.getElementById("starfield");
-  const STAR_COUNT = 140;
-  const frag = document.createDocumentFragment();
-  for (let i = 0; i < STAR_COUNT; i++) {
-    const star = document.createElement("div");
-    star.className = "star";
-    const size = Math.random() * 2.2 + 0.6;
-    star.style.width = size + "px";
-    star.style.height = size + "px";
-    star.style.left = Math.random() * 100 + "%";
-    star.style.top = Math.random() * 100 + "%";
-    star.style.setProperty("--tw-dur", (Math.random() * 5 + 2.5).toFixed(2) + "s");
-    star.style.setProperty("--tw-delay", (Math.random() * 6).toFixed(2) + "s");
-    frag.appendChild(star);
+  if (field) {
+    const STAR_COUNT = 120;
+    const frag = document.createDocumentFragment();
+    for (let i = 0; i < STAR_COUNT; i++) {
+      const star = document.createElement("div");
+      star.className = "star";
+      const size = Math.random() * 2 + 0.5;
+      star.style.width = size + "px";
+      star.style.height = size + "px";
+      star.style.left = Math.random() * 100 + "%";
+      star.style.top = Math.random() * 100 + "%";
+      star.style.setProperty("--tw-dur", (Math.random() * 5 + 3).toFixed(2) + "s");
+      star.style.setProperty("--tw-delay", (Math.random() * 6).toFixed(2) + "s");
+      frag.appendChild(star);
+    }
+    field.appendChild(frag);
   }
-  field.appendChild(frag);
+
+  /* ---------- occasional shooting stars ---------- */
+  const shooting = document.getElementById("shooting");
+  if (shooting && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const specs = [
+      { top: "12%", left: "78%", dur: 9, delay: 2 },
+      { top: "26%", left: "92%", dur: 13, delay: 7 },
+      { top: "48%", left: "84%", dur: 17, delay: 12 },
+    ];
+    specs.forEach((s) => {
+      const el = document.createElement("div");
+      el.className = "shooting-star";
+      el.style.top = s.top;
+      el.style.left = s.left;
+      el.style.setProperty("--sh-dur", s.dur + "s");
+      el.style.setProperty("--sh-delay", s.delay + "s");
+      shooting.appendChild(el);
+    });
+  }
 
   /* ---------- reveal on scroll ---------- */
   const revealables = document.querySelectorAll(".reveal");

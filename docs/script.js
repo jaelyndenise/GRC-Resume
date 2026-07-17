@@ -34,10 +34,13 @@
   });
   syncLabel();
 
-  /* ---------- starfield (gold / champagne) ---------- */
+  /* ---------- static starfield (gold / champagne) ----------
+     Painted once. Deliberately no per-star animation: the field sits behind
+     backdrop-filter glass, so animating it would re-blur every panel each
+     frame and freeze the renderer. */
   const field = document.getElementById("starfield");
   if (field) {
-    const STAR_COUNT = 120;
+    const STAR_COUNT = 110;
     const frag = document.createDocumentFragment();
     for (let i = 0; i < STAR_COUNT; i++) {
       const star = document.createElement("div");
@@ -47,30 +50,9 @@
       star.style.height = size + "px";
       star.style.left = Math.random() * 100 + "%";
       star.style.top = Math.random() * 100 + "%";
-      star.style.setProperty("--tw-dur", (Math.random() * 5 + 3).toFixed(2) + "s");
-      star.style.setProperty("--tw-delay", (Math.random() * 6).toFixed(2) + "s");
       frag.appendChild(star);
     }
     field.appendChild(frag);
-  }
-
-  /* ---------- occasional shooting stars ---------- */
-  const shooting = document.getElementById("shooting");
-  if (shooting && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    const specs = [
-      { top: "12%", left: "78%", dur: 9, delay: 2 },
-      { top: "26%", left: "92%", dur: 13, delay: 7 },
-      { top: "48%", left: "84%", dur: 17, delay: 12 },
-    ];
-    specs.forEach((s) => {
-      const el = document.createElement("div");
-      el.className = "shooting-star";
-      el.style.top = s.top;
-      el.style.left = s.left;
-      el.style.setProperty("--sh-dur", s.dur + "s");
-      el.style.setProperty("--sh-delay", s.delay + "s");
-      shooting.appendChild(el);
-    });
   }
 
   /* ---------- reveal on scroll ---------- */

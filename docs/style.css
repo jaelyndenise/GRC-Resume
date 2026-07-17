@@ -145,49 +145,23 @@ img { max-width: 100%; display: block; }
 .glow-2 { width: 50vw; height: 50vw; bottom: -20vw; right: -12vw;
   background: radial-gradient(circle, rgba(217,138,95,0.22) 0%, transparent 66%); }
 
-.starwheel {
-  position: absolute;
-  top: 50%; left: 50%;
-  width: 180vmax; height: 180vmax;
-  transform: translate(-50%, -50%);
-  animation: wheel 260s linear infinite;
-}
+/* Static starfield — painted once. Nothing in the fixed background layer
+   animates: any motion here sits behind ~20 backdrop-filter glass panels and
+   forces the browser to re-blur every one of them each frame, which pegs the
+   renderer. Twinkle/wheel/shooting-stars were removed for exactly that reason. */
+.starwheel { position: absolute; inset: 0; }
 #starfield { position: absolute; inset: 0; }
 .star {
   position: absolute;
   border-radius: 50%;
   background: var(--star);
   opacity: var(--star-opacity);
-  animation: twinkle var(--tw-dur, 4s) ease-in-out infinite;
-  animation-delay: var(--tw-delay, 0s);
-}
-@keyframes wheel { to { transform: translate(-50%, -50%) rotate(360deg); } }
-@keyframes twinkle {
-  0%, 100% { opacity: calc(var(--star-opacity) * 0.3); }
-  50%      { opacity: var(--star-opacity); }
-}
-
-.shooting-star {
-  position: absolute;
-  width: 140px; height: 1.5px;
-  background: linear-gradient(90deg, var(--radiant), transparent);
-  opacity: 0;
-  transform: rotate(18deg);
-  filter: drop-shadow(0 0 6px var(--gold2));
-  animation: shoot var(--sh-dur, 7s) ease-in var(--sh-delay, 0s) infinite;
-}
-@keyframes shoot {
-  0%   { opacity: 0; transform: translate(0, 0) rotate(18deg); }
-  2%   { opacity: 1; }
-  12%  { opacity: 0; transform: translate(-42vw, 14vw) rotate(18deg); }
-  100% { opacity: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .starwheel { animation: none; }
-  .star, .shooting-star { animation: none; }
   html { scroll-behavior: auto; }
   .reveal { transition: none !important; }
+  .scroll-cue svg { animation: none; }
 }
 
 /* ---------- glass ---------- */
@@ -196,8 +170,8 @@ img { max-width: 100%; display: block; }
   border: 1px solid var(--glass-border);
   border-radius: var(--radius);
   box-shadow: var(--glass-shadow);
-  backdrop-filter: blur(16px) saturate(140%);
-  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  backdrop-filter: blur(11px) saturate(135%);
+  -webkit-backdrop-filter: blur(11px) saturate(135%);
 }
 
 /* ---------- nav ---------- */
@@ -215,8 +189,8 @@ img { max-width: 100%; display: block; }
   border: 1px solid var(--glass-border);
   border-radius: 999px;
   box-shadow: var(--glass-shadow);
-  backdrop-filter: blur(16px) saturate(140%);
-  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  backdrop-filter: blur(11px) saturate(135%);
+  -webkit-backdrop-filter: blur(11px) saturate(135%);
 }
 .brand { display: flex; align-items: center; gap: 9px; text-decoration: none; white-space: nowrap; }
 .brand-mark { color: var(--gold); font-size: 0.9rem; }
